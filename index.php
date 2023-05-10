@@ -3,13 +3,14 @@ require_once('util/secure_conn.php');
 ?>
 <?php include 'view/header.php'; ?>
 <main>
-    <h2>Main Menu</h2>
-    <nav>
-        <ul>
-            <li><a href="officer">Officer</a></li>
-            <li><a href="user">User</a></li>
-            <li><a href="guest">Guests</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Thank you for coming to the meeting! Don't forget to also join our discord!</p>
+
+                <p>P.S. If you are an officer don't forget to close the meeting!
+            </div>
+        </div>
+    </div>
 </main>
 <?php include 'view/footer.php'; ?>

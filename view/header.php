@@ -10,12 +10,24 @@
 </head>
 
 <body>
-    <header>
-        <img class="banner" src="/clubhub/public/images/banner300dpi.png"></a>
-        <p>"These bugs aren't just going to make themselves!"</p>
-        <nav>
-            <a href="/clubhub/">Home</a> |
-            <a href="/clubhub/">Meetings</a> |
-            <a href="/clubhub/kiosk">Kiosk</a>
-        </nav>
-    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <header>
+                    <img class="banner" src="/clubhub/public/images/banner300dpi.png"></a>
+                    <p>"These bugs aren't just going to make themselves!"</p>
+
+                    <nav>
+                        <a class="btn btn-outline-primary" href="/clubhub/" role="button">Home</a>
+                        <a class="btn btn-outline-primary" href="/clubhub/kiosk" role="button">Kiosk</a>
+                        <a class="btn btn-outline-primary" href="/clubhub/user" role="button">User Tools</a>
+                        <a class="btn btn-outline-primary" href="/clubhub/officer" role="button">Officer Tools</a>
+                        <a class="btn btn-outline-primary" href="/clubhub/guest" role="button">Mission Statement</a>
+
+                    </nav>
+                </header>
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>

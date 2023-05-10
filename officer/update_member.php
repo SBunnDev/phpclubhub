@@ -9,7 +9,7 @@ require_once('../util/valid_officer.php');
             <div class="col">
                 <h2>Add Member</h2>
                 <form action="" method="post" id="aligned">
-                    <input type="hidden" name="action" value="add_member">
+                    <input type="hidden" name="action" value="update_member">
 
                     <label>First Name:</label>
                     <input type="text" name="fName" size="30">
@@ -19,8 +19,8 @@ require_once('../util/valid_officer.php');
                     <input type="text" name="lName" size="30">
                     <br>
 
-                    <label>Username:</label>
-                    <input type="text" name="username" size="30">
+                    <label>Join Date:</label>
+                    <input type="text" name="joinDate" size="30">
                     <br>
 
                     <label>Role:</label>
@@ -39,7 +39,7 @@ require_once('../util/valid_officer.php');
                     </br>
 
                     <label>&nbsp;</label>
-                    <input type="submit" class="btn btn-primary btn-lg" value="Add New Member">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Update Member">
                 </form>
             </div>
         </div>

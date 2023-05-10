@@ -32,13 +32,40 @@ switch ($action) {
     case 'view_menu':
         include 'user_menu.php';
         break;
+    case 'view_update_password':
+        include 'user_password_reset.php';
+        break;
     case 'login':
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
-        if (is_valid_login($username, $password)) {
-            $_SESSION['user'] = $username;
+        if ($password == 'changeme') {
+            if (is_valid_login($username, $password)) {
+                $_SESSION['user'] = $username;
+            } else {
+                $error_message = 'Login failed. Invalid user or password.';
+            }
         } else {
-            $error_message = 'Login failed. Invalid user or password.';
+            if (is_valid_login_secure($username, $password)) {
+                $_SESSION['user'] = $username;
+            } else {
+                $error_message = 'Secure Login failed. Please consult an administrator';
+            }
+        }
+        include 'user_menu.php';
+        break;
+    case 'update_password':
+        $username = filter_input(INPUT_POST, 'username');
+        $old_password = filter_input(INPUT_POST, 'old_password');
+        $password = filter_input(INPUT_POST, 'new_password');
+        $password_conf = filter_input(INPUT_POST, 'new_password_conf');
+        if ($password == $password_conf) {
+            if (is_valid_login($username, $old_password)) {
+                update_password($username, $password);
+            } else {
+                $error_message = 'Password update failed.';
+            }
+        } else {
+            $error_message = 'Password mismatch';
         }
         include 'user_menu.php';
         break;
